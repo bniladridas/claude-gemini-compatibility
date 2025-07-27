@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-27T12:19:58.351Z",
+  "testCases": 4,
+  "totalFiles": 11,
+  "differences": [
+    "File boundary markers (Claude: --- File: --- vs Gemini: <!-- Imported from: -->)",
+    "Processing order (Claude: flat vs Gemini: hierarchical)",
+    "Duplicate handling (Claude: deduplicates vs Gemini: processes each)",
+    "Hierarchy presentation (Claude: none vs Gemini: explicit)"
+  ],
+  "recommendations": [
+    "Implement Claude-style flat processing as default option",
+    "Add configuration to switch between processing modes",
+    "Standardize file boundary markers across implementations",
+    "Create migration tools for existing CLAUDE.md files"
+  ]
+}
