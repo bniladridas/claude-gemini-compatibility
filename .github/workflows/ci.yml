@@ -30,7 +30,7 @@ jobs:
     - name: Run GitHub search script
       run: |
         cd scripts
-        node find-claude-md-examples.js
+        node find-claude-md-examples.cjs
       continue-on-error: true  # GitHub API might require auth
 
     - name: Upload test artifacts
