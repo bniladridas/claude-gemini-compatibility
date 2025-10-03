@@ -1,10 +1,18 @@
 # Duplicate Test
 
-<!-- Import failed: ./shared/config.md -->
+<!-- Imported from: ./shared/config.md -->
+# Configuration
+
+This is the configuration content.
+<!-- End of import from: ./shared/config.md -->
 
 Content here.
 
-<!-- Import failed: ./shared/config.md -->
+<!-- Imported from: ./shared/config.md -->
+# Configuration
+
+This is the configuration content.
+<!-- End of import from: ./shared/config.md -->
 
 More content.
 
