@@ -9,7 +9,7 @@ Elevate the CLAUDE.md '@' compatibility issue from low priority by providing evi
 ## Structure
 
 - `docs/at-file-inclusion-specification.md` - '@' file inclusion syntax specification
-- `scripts/find-claude-md-examples.js` - GitHub search for real-world examples
+- `scripts/find-claude-md-examples.cjs` - GitHub search for real-world examples
 - `integration-tests/claude-compatibility.test.js` - Compatibility test suite
 
 ## Core Differences
@@ -56,12 +56,20 @@ Elevate the CLAUDE.md '@' compatibility issue from low priority by providing evi
 
 **GitHub Search**
 ```bash
-cd scripts && node find-claude-md-examples.js
+cd scripts && node find-claude-md-examples.cjs
+```
+or
+```bash
+npm run search
 ```
 
 **Compatibility Tests**
 ```bash
 cd integration-tests && node claude-compatibility.test.js
+```
+or
+```bash
+npm run test
 ```
 
 **Specification Review**
