@@ -113,21 +113,22 @@ function generateClaudeStyleOutput(files, processedFiles) {
 // Expected Gemini CLI tree format output
 function generateGeminiTreeOutput(files, processedFiles, importMap) {
   const output = [];
-  
+
   for (const filePath of processedFiles) {
     const content = files[filePath];
     const lines = content.split('\n');
     const processedLines = [];
-    
+
     for (const line of lines) {
       const atMatch = line.match(/@([^\s]+)/);
       if (atMatch) {
         const importPath = atMatch[1];
-        const fullImportPath = path.resolve(path.dirname(filePath), importPath);
-        
-        if (importMap[fullImportPath]) {
+        // Normalize the import path to match the keys in importMap
+        const normalizedImportPath = path.normalize(path.join(path.dirname(filePath), importPath));
+
+        if (importMap[normalizedImportPath]) {
           processedLines.push(`<!-- Imported from: ${importPath} -->`);
-          processedLines.push(importMap[fullImportPath].trim());
+          processedLines.push(importMap[normalizedImportPath].trim());
           processedLines.push(`<!-- End of import from: ${importPath} -->`);
         } else {
           processedLines.push(`<!-- Import failed: ${importPath} -->`);
@@ -136,10 +137,10 @@ function generateGeminiTreeOutput(files, processedFiles, importMap) {
         processedLines.push(line);
       }
     }
-    
+
     output.push(processedLines.join('\n'));
   }
-  
+
   return output.join('\n\n');
 }
 
