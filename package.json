@@ -1,0 +1,29 @@
+{
+  "name": "claude-gemini-compatibility",
+  "version": "1.0.0",
+  "description": "Research and tools for Claude Code vs Gemini CLI '@' file inclusion compatibility",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd integration-tests && node claude-compatibility.test.js",
+    "search": "cd scripts && node find-claude-md-examples.cjs",
+    "lint": "echo 'No linting configured'",
+    "typecheck": "echo 'No type checking configured'"
+  },
+  "keywords": [
+    "claude",
+    "gemini",
+    "compatibility",
+    "markdown",
+    "file-inclusion"
+  ],
+  "author": "",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bniladridas/claude-gemini-compatibility.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
