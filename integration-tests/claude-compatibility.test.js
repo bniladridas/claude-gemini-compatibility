@@ -124,7 +124,7 @@ function generateGeminiTreeOutput(files, processedFiles, importMap) {
       if (atMatch) {
         const importPath = atMatch[1];
         // Normalize the import path to match the keys in importMap
-        const normalizedImportPath = path.normalize(path.join(path.dirname(filePath), importPath));
+        const normalizedImportPath = path.normalize(path.join(path.dirname(filePath), importPath)).replace(/\\/g, '/');
 
         if (importMap[normalizedImportPath]) {
           processedLines.push(`<!-- Imported from: ${importPath} -->`);
