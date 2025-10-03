@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Run compatibility tests
+      run: |
+        cd integration-tests
+        node claude-compatibility.test.js
+
+    - name: Run GitHub search script
+      run: |
+        cd scripts
+        node find-claude-md-examples.js
+      continue-on-error: true  # GitHub API might require auth
+
+    - name: Upload test artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.node-version }}
+        path: |
+          integration-tests/claude-compatibility-test/
+          scripts/claude-md-analysis-report.json

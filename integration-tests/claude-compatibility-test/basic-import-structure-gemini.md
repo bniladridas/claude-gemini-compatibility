@@ -2,13 +2,29 @@
 
 This is the main content.
 
-<!-- Import failed: ./components/header.md -->
+<!-- Imported from: ./components/header.md -->
+# Header Component
+
+@./shared/title.md
+
+This is the header content.
+<!-- End of import from: ./components/header.md -->
 
 More content here.
 
-<!-- Import failed: ./components/footer.md -->
+<!-- Imported from: ./components/footer.md -->
+# Footer Component
 
-<!-- Import failed: ./shared/config.md -->
+This is the footer content.
+
+@./shared/links.md
+<!-- End of import from: ./components/footer.md -->
+
+<!-- Imported from: ./shared/config.md -->
+# Configuration
+
+This is the configuration content.
+<!-- End of import from: ./shared/config.md -->
 
 
 # Header Component
