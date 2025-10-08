@@ -75,6 +75,22 @@ npm run test
 **Specification Review**
 See `docs/at-file-inclusion-specification.md` for detailed syntax analysis.
 
+**Conventional Commits**
+This project follows conventional commit standards. To enable commit message validation:
+
+```bash
+# Copy the commit-msg hook to enable validation
+cp scripts/commit-msg .git/hooks/commit-msg
+
+# To rewrite existing commit messages (use with caution):
+./scripts/rewrite_msg.sh
+```
+
+Commit messages must:
+- Start with types: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`, `perf:`, `ci:`, `build:`, `revert:`
+- Have lowercase message body
+- Be ≤60 characters for the first line
+
 ## Next Steps
 
 1. Complete GitHub search for real-world examples
